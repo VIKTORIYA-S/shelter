@@ -87,7 +87,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .nav {
     display: flex;
     align-items: center;
-    padding-right: 60px;
+    /* padding-right: 60px; */
     margin-bottom: 6px;
 }
 
@@ -109,6 +109,11 @@ p, h1, h2, h3, h4, h5, h6 {
     border-bottom: 4px solid var(--primary-color);
     line-height: 15px;
 }
+
+.nav__menu:last-child {
+    margin-right: 0;
+}
+
 .nav__menu:hover {
     color: var(--primary-color);
     transition: color .3s ease;
@@ -146,7 +151,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .hero__content {
     display: flex;
     flex-direction: column;
-    gap: 43px;
+    gap: 40px;
     margin-bottom: 78px;
 }
 
@@ -256,7 +261,7 @@ margin-left: 175px;
     letter-spacing: 0.06em;
     text-align: center;
     color: var(--color-dark-l);
-    margin-top: 41px;
+    margin-top: 43px;
     margin-bottom: 60px;
 }
 
@@ -302,6 +307,11 @@ margin-left: 175px;
     background-color: var(--color-light-s);
     border-radius: 9px;
     text-decoration: none;
+    margin-bottom: 55px;
+}
+
+.pets__card:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.2);
 }
 
 .pets__card:hover {
@@ -338,7 +348,7 @@ margin-left: 175px;
     padding: 0;
     color: var(--color-dark-3xl);
     cursor: pointer;
-    margin-bottom: 90px;
+    margin-bottom: 36px;
     text-decoration: none;
     outline: none;
 }
@@ -500,7 +510,8 @@ margin-left: 175px;
 
 .donation__img {
     margin-left: 142px;
-    margin-bottom: 13px;
+    margin-top: 5px;
+    /* margin-bottom: 3px; */
 }
 
 .donation__content {
@@ -560,8 +571,9 @@ margin-left: 175px;
     font-size: 12px;
     font-weight: 400;
     line-height: 160%;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.01em;
     color: var(--color-dark-m);
+    margin-top: 3px;
 }
 
 .footer {
@@ -571,7 +583,7 @@ margin-left: 175px;
 .footer__container {
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 .footer__content {
@@ -579,7 +591,7 @@ margin-left: 175px;
     flex-direction: column;
     align-items: center;
     gap: 38px;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .footer__contacts-title,
