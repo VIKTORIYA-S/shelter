@@ -42,16 +42,56 @@ span:hover {
     background-color: none;
 } */
 
-.nav__menu.active {
+/* .nav__menu .active {
     color: var(--color-dark-3xl);
     border-bottom: 3px solid var(--primary-color);
-}   
+}   */
+
+.active {
+    color: var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
+    line-height: 15px;
+}
+
+.nav__menu:hover {
+    color: var(--primary-color);
+    transition: color .3s ease;
+}
 
 .nav__menu-first {
     text-decoration: none;
     border: none;
     border-bottom: none;
     background-color: none;
+    color: var(--color-dark-3xl);
+}
+
+.nav__menu-first:hover {
+    color: var(--primary-color);
+        transition: color .3s ease;
+}
+
+.nav__menu-first::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    margin-top: 3px;
+    background-color: var(--primary-color);
+    transition: width .3s ease;
+}
+
+.nav__menu-first:hover::after {
+    width: 100%;
+}
+
+.nav__menu-second::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    background: var(--primary-color);
+    margin-top: 3px;
 }
 
 .logo__title {
