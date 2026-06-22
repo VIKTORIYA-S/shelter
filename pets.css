@@ -22,6 +22,7 @@ body {
     --color-dark-3xl: #292929;
     --color-light-xl: #fff;
     --background-gradient: #C6C6C6;
+    --color-dark: #000000;
 }
 
 p,
@@ -75,7 +76,7 @@ h6 {
     padding-left: 2px;
 }
 
-.burger {
+.pets__burger {
     display: none;
 }
 
@@ -137,23 +138,54 @@ h6 {
 }
 
 
-@media screen and (max-width: 767px) {
-    .nav {
-        display: none;
-    }
-
-    .burger {
-        display: flex;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .header {
         margin-bottom: 62px;
     }
 
     .container {
-        padding: 38px 28px 0 29px;
+        padding: 38px 10px 0 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .nav {
+        display: none;
+    }
+
+    .pets__burger {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .container {
+        padding: 35px 11px 0 21px;
+    }
+
+    .header {
+        width: 280px;
+    }
+
+    .logo__title {
+        font-size: 32px;
+        letter-spacing: 1.8px;
+        margin-bottom: 17px;
+    }
+
+    .logo__subtitle {
+        font-size: 12px;
+        padding-left: 3px;
+        letter-spacing: 1.7px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .pets__burger {
+        height: 17px;
+        margin-bottom: 11px;
     }
 }
 
@@ -342,6 +374,66 @@ h6 {
     }
 }
 
+@media screen and (max-width: 330px) {
+    .header {
+        margin-bottom: 0;
+    }
+
+    .pets {
+        margin-bottom: 40px;
+    }
+
+    .pets__container {
+            padding: 30px 20px 0 20px;
+        }
+
+    .pets__title {
+        width: 100%;
+        letter-spacing: 0.95px;
+        font-size: 25px;
+        margin-bottom: 26px;
+        margin-left: 32px;
+    }
+
+    .pets__burger {
+        height: 17px;
+        margin-bottom: 11px;
+    }
+
+    .pets__cards {
+        gap: 22px;
+    }
+
+    .pets__card {
+        margin-bottom: 2px;
+    }
+
+    .pets__card-img {
+        margin-left: 40px;
+        margin-top: 16px;
+    }
+
+    .pets__card-name {
+        margin-left: 40px;
+    }
+
+    .pets__card-button {
+        margin-left: 40px;
+    }
+
+    .sophia,
+    .timmy,
+    .charly {
+        display: none;
+    }
+
+    .pets__arrows {
+        gap: 8px;
+        margin-left: 32px;
+    }
+
+}
+
 
 /* footer */
 .footer {
@@ -442,6 +534,29 @@ h6 {
     padding-right: 30px;
 }
 
+/* @media screen and (max-width: 1200px) {
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 42px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .footer__container {
+        padding-top: 15px;
+        gap: 66px;
+    }
+
+    .footer__wrapper {
+        gap: 61px;
+    }
+
+    .footer__img {
+        padding-right: 5px;
+    }
+} */
+
 @media screen and (max-width: 1200px) {
     .footer__container {
         flex-direction: column;
@@ -461,6 +576,83 @@ h6 {
     }
 
     .footer__img {
+        padding-right: 5px;
+    }
+}
+
+
+@media screen and (max-width: 330px) {
+    .footer {
+        margin-left: 20px;
+    }
+
+    .footer__wrapper {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .footer__container {
+        padding-top: 13px;
+        gap: 40px;
+    }
+
+    .footer__contacts,
+    .footer__tel {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .footer__contacts-title,
+    .footer__address-title {
+        font-family: 'Georgia', sans-serif;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .footer__address-title {
+        padding-right: 0px;
+        width: 88%;
+    }
+
+    .footer__content {
+        gap: 40px;
+    }
+
+    .footer__contacts-title br,
+    .footer__address-title br {
+        display: none;
+    }
+
+    .footer__contacts,
+    .footer__tel {
+        padding-right: 0;
+        width: 78%;
+    }
+
+    .footer__address-1,
+    .footer__address-2 {
+        padding-right: 0px;
+    }
+
+    .footer__email-number,
+    .footer__tel-number {
+        letter-spacing: 0.6px;
+        font-size: 20px;
+        width: 180px;
+    }
+
+    .footer__address-1 {
+        padding-right: 0px;
+        width: 296px;
+    }
+
+    .footer__address-2 {
+        padding-right: 32px;
+        width: 296px;
+    }
+
+    .footer__img {
+        width: 260px;
         padding-right: 5px;
     }
 }
