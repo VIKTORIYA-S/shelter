@@ -18,3 +18,24 @@
     position: absolute;
     transition: all .3s ease;
 }
+
+.pets__burger {
+    width: 30px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    border-top: 3px solid var(--color-dark);
+    border-bottom: 3px solid var(--color-dark);
+    transition: all .3s ease;
+}
+
+.pets__burger__line {
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-dark);
+    position: absolute;
+    transition: all .3s ease;
+}
