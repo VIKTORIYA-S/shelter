@@ -96,10 +96,16 @@ p, h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
+@media screen and (max-width: 330px) {
+    .burger {
+        margin-bottom: 6px;
+        height: 18px;
+    }
+}
+
 .nav {
     display: flex;
     align-items: center;
-    /* padding-right: 60px; */
     margin-bottom: 6px;
 }
 
@@ -646,6 +652,39 @@ margin-left: 175px;
     }
 }
 
+@media screen and (max-width: 400px) {
+    .pets__wrapper {
+        display: none;
+    }
+
+    .pets-small__wrapper {
+        display: block;
+    }
+
+    .pets__title {
+        margin-bottom: 35px;
+    }
+
+    .pets__card {
+        margin-bottom: 12px;
+    }
+
+    .pets__card-img {
+        margin-left: 7px;
+    }
+
+    .pets__arrow_wrapper {
+        display: flex;
+        margin-bottom: 42px;
+        justify-content: center;
+        gap: 80px;
+    }
+
+    .pets__arrow {
+        margin-bottom: 0px;
+    }
+}
+
 
 
 @media screen and (max-width: 330px) {
@@ -1066,7 +1105,7 @@ margin-left: 175px;
 .donation__img {
     width: 260px;
     margin: 0 auto;
-    padding-right: 3px;
+    padding-left: 15px;
 }
 }
 
@@ -1260,7 +1299,7 @@ margin-left: 175px;
 
 .footer__img {
     width: 260px;
-        padding-right: 5px;
+        padding-left: 12px;
 }
 }
 
