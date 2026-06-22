@@ -474,6 +474,10 @@ margin-left: 175px;
     margin-bottom: 60px;
 }
 
+.pets-small__wrapper {
+    display: none;
+}
+
 .pets__wrapper {
     display: flex;
     justify-content: center;
