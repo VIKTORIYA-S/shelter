@@ -3,12 +3,12 @@
     height: 22px;
     position: relative;
     cursor: pointer;
-    /* display: flex; */
     align-items: center;
     justify-content: center;
     border-top: 3px solid var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
     transition: all .3s ease;
+    margin-right: 15px;
 }
 
 .burger__line {
@@ -26,23 +26,24 @@
     }
 }
 
-.pets__burger {
-    width: 30px;
-    height: 22px;
-    position: relative;
-    cursor: pointer;
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    border-top: 3px solid var(--color-dark);
-    border-bottom: 3px solid var(--color-dark);
-    transition: all .3s ease;
+.burger--dark {
+    border-color: var(--color-dark-l);
 }
 
-.pets__burger__line {
-    width: 30px;
-    height: 2px;
-    background-color: var(--color-dark);
-    position: absolute;
-    transition: all .3s ease;
+.burger--dark .burger__line {
+    background-color: var(--color-dark-l);
 }
+
+.burger--dark.burger__rotate {
+    border-top-color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.burger--dark.burger__rotate .burger__line {
+    background-color: var(--primary-color);
+}
+
+.nav.burger__click .nav__menu {
+    color: var(--color-light-xl);
+}
+

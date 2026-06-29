@@ -29,6 +29,7 @@
                         <a class="nav__menu" href="#help">Help the shelter</a>
                         <a class="nav__menu" href="#contacts">Contacts</a>
                     </nav>
+                    <div class="overlay"></div>
                     <div class="burger">
                         <span class="burger__line"></span>
                     </div>
@@ -77,6 +78,12 @@
                                 <p class="pets__card-name">Woody</p>
                                 <button class="pets__card-button">Learn more</button>
                             </div>
+                            <div class="card_overlay" id="overlay">
+                                <div class="overlay__content" id="overlay-content">
+                                    <!-- сюда будем вставлять карточку -->
+                                    <button id="overlay-close">Закрыть</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="pets__arrow pets__arrow-right">
                             <img src="assets/icons/arrow.png" alt="arrow right" class="pets__arrow-img pets__arrow-img-right">
@@ -89,7 +96,7 @@
                                 <p class="pets__card-name">Katrine</p>
                                 <button class="pets__card-button">Learn more</button>
                             </div>
-                            <div class="pets__card pets__card-2">
+                            <!-- <div class="pets__card pets__card-2">
                                 <img src="assets/images/pets-jennifer.png" alt="dog" class="pets__card-img">
                                 <p class="pets__card-name">Jennifer</p>
                                 <button class="pets__card-button">Learn more</button>
@@ -98,7 +105,7 @@
                                 <img src="assets/images/pets-woody.png" alt="dog" class="pets__card-img">
                                 <p class="pets__card-name">Woody</p>
                                 <button class="pets__card-button">Learn more</button>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="pets__arrow_wrapper">
                             <div class="pets__arrow pets__arrow-left">
@@ -201,7 +208,11 @@
                 <img src="assets/images/footer-puppy.png" alt="dog" class="footer__img">
             </div>
         </footer>
+
+        <div class="card_overlay" id="overlay">
+            <div class="overlay__container" id="overlay-content"></div>
+        </div>
     </div>
-    <script src="index.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>
