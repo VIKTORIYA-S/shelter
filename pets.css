@@ -11,6 +11,10 @@ body {
     height: 100%;
 }
 
+body.lock {
+    overflow: hidden;
+}
+
 :root {
     --primary-color: #F1CDB3;
     --primary-color-hover: #FDDCC4;
@@ -25,13 +29,7 @@ body {
     --color-dark: #000000;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
@@ -76,14 +74,13 @@ h6 {
     padding-left: 2px;
 }
 
-.pets__burger {
-    display: none;
-}
+ .burger {
+     display: none;
+ }
 
 .nav {
     display: flex;
     align-items: center;
-    /* padding-right: 60px; */
     margin-bottom: 6px;
 }
 
@@ -137,6 +134,45 @@ h6 {
     margin-top: 3px;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: none;
+}
+
+/* когда меню активно */
+.nav.burger__click~.overlay {
+    display: block;
+}
+
+.burger__click {
+    display: flex;
+}
+
+.pets__cards {
+    transition: opacity .5s ease;
+}
+
+.pets__cards.fade {
+    opacity: 0;
+}
+
+.pets__arrow.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+
 
 @media screen and (max-width: 768px) {
     .header {
@@ -150,12 +186,69 @@ h6 {
 
 @media screen and (max-width: 767px) {
     .nav {
-        display: none;
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            width: 320px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: var(--color-dark-3xl);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform .5s ease;
+            padding: 248px 38px;
+            gap: 40px;
+        }
 
-    .pets__burger {
+        .nav__menu {
+            font-size: 32px;
+        }
+
+        .burger {
+            display: flex;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .burger__rotate {
+            transform: rotate(450deg);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .burger__click {
+            display: flex;
+        }
+
+        /* активное состояние — меню выезжает */
+        .nav.burger__click {
+            transform: translateX(0);
+        }
+
+        /* показываем фон, когда меню активно */
+        .nav.burger__click~.overlay {
+            display: block;
+        }
+
+     .burger {
         display: flex;
-    }
+     }
+
+         span.active {
+             color: var(--primary-color) !important;
+         }
 }
 
 @media screen and (max-width: 330px) {
@@ -177,10 +270,6 @@ h6 {
         font-size: 12px;
         padding-left: 3px;
         letter-spacing: 1.7px;
-    }
-
-    .nav {
-        display: none;
     }
 
     .pets__burger {
@@ -321,8 +410,8 @@ h6 {
 .pets__arrow-1,
 .pets__arrow-2 {
     border: 2px solid var(--color-dark-s);
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
 }
 
@@ -335,6 +424,12 @@ h6 {
     transition: background-color .3s ease;
 }
 
+.pets__arrow:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
 
 
 
@@ -345,7 +440,7 @@ h6 {
         }
 
         .container {
-            padding: 38px 22px 0 40px;
+            padding: 38px 10px 0 10px;
         }
 
         .pets {
@@ -384,7 +479,7 @@ h6 {
     }
 
     .pets__container {
-            padding: 30px 20px 0 20px;
+            padding: 30px 10px 0 10px;
         }
 
     .pets__title {
@@ -392,7 +487,7 @@ h6 {
         letter-spacing: 0.95px;
         font-size: 25px;
         margin-bottom: 26px;
-        margin-left: 32px;
+        /* margin-left: 32px; */
     }
 
     .pets__burger {
@@ -409,7 +504,7 @@ h6 {
     }
 
     .pets__card-img {
-        margin-left: 40px;
+        /* margin-left: 40px; */
         margin-top: 16px;
     }
 
@@ -429,7 +524,7 @@ h6 {
 
     .pets__arrows {
         gap: 8px;
-        margin-left: 32px;
+        margin: auto;
     }
 
 }
@@ -450,6 +545,8 @@ h6 {
 
 .footer__wrapper {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 158px;
 }
 
@@ -582,11 +679,8 @@ h6 {
 
 
 @media screen and (max-width: 330px) {
-    .footer {
-        margin-left: 20px;
-    }
-
     .footer__wrapper {
+        max-width: 320px;
         gap: 25px;
         flex-wrap: wrap;
     }
@@ -647,7 +741,7 @@ h6 {
     }
 
     .footer__address-2 {
-        padding-right: 32px;
+        /* padding-right: 32px; */
         width: 296px;
     }
 
