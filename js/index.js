@@ -163,21 +163,35 @@ function generateNewGroup(prevGroup, count) {
 
 const overlayCard = document.getElementById("overlay");
 const overlayContent = document.getElementById("overlay-content");
+const overlayClose = document.getElementById("overlay__close");
 
 function openOverlay(idOfElement) {
   overlayContent.innerHTML = `
-    <div class="overlay__card">
-      <img src="${data[idOfElement].img}" alt="${data[idOfElement].name}" class="overlay__img">
-      <div class="overlay__content">
-      <h3 class="overlay__title">${data[idOfElement].name}</h3>
-      <p class="overlay__description">${data[idOfElement].description}</p>
-      </div>
-      <button class="overlay__close">x</button>
-    </div>
+  <div class="overlay__card" id="overlay">
+            <div class="overlay__container" id="overlay-content">
+                <div class="overlay__img_wrapper">
+                    <img class="overlay__img" src="${data[idOfElement].img}" alt="${data[idOfElement].name}">
+                </div>
+                <div class="overlay__content">
+                    <h2 class="overlay__title">${data[idOfElement].name}</h2>
+                    <h3 class="overlay__subtitle">${data[idOfElement].type} - ${data[idOfElement].breed}</h3>
+                    <p class="overlay__description">${data[idOfElement].description}</p>
+                    <p class="overlay__age-title">Age: <span class="overlay__age-title-span">${data[idOfElement].age}</span></p>
+                    <p class="overlay__inoculations-title">Inoculations: <span class="overlay__inoculations-title-span">${data[idOfElement].inoculations}</span></p>
+                    <p class="overlay__diseases-title">Diseases: <span class="overlay__diseases-title-span">${data[idOfElement].diseases}</span></p>
+                    <p class="overlay__parasites-title">Parasites: <span class="overlay__parasites-title-span">${data[idOfElement].parasites}</span></p>
+                </div>
+                <button id="overlay__close">x</button>
+            </div>
+        </div>
+
+
+
+    
   `;
   overlayCard.style.display = "flex";
 
-  const closeBtn = overlayContent.querySelector(".overlay__close");
+  const closeBtn = document.getElementById("overlay__close");
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       overlayCard.style.display = "none";
@@ -190,6 +204,10 @@ overlayCard.addEventListener("click", (e) => {
   if (e.target === overlayCard) {
     overlayCard.style.display = "none";
   }
+
+  overlayClose.addEventListener("click", () => {
+    overlayCard.style.display = "none";
+  });
 });
 // //////////////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////////
