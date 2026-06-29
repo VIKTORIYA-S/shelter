@@ -207,7 +207,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .overlay__content {
     background: #fafafa;
-    /* position: relative; */
     max-width: 900px;
     height: 362px;
     text-align: center;
@@ -367,7 +366,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .pets__card {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -379,7 +377,6 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
 
-/* когда меню активно */
 .nav.burger__click~.overlay {
     display: block;
 }
@@ -455,7 +452,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Планшет 768px */
 @media screen and (max-width: 768px) {
     .header {
         margin-bottom: 62px;
@@ -511,14 +507,12 @@ p, h1, h2, h3, h4, h5, h6 {
             align-items: center;
             margin-bottom: 0;
             width: 320px;
-            /* height: 100vh; */
             position: fixed;
             top: 0;
             right: 0;
             background-color: var(--color-dark-3xl);
             z-index: 1000;
             transform: translateX(100%);
-            /* меню скрыто за экраном */
             transition: transform .5s ease;
             padding: 248px 38px;
             gap: 40px;
@@ -532,7 +526,6 @@ p, h1, h2, h3, h4, h5, h6 {
             display: flex;
             cursor: pointer;
             z-index: 1001;
-            /* выше меню */
         }
 
         .burger__rotate {
@@ -550,21 +543,13 @@ p, h1, h2, h3, h4, h5, h6 {
             z-index: 999;
         }
 
-        /* активное состояние — меню выезжает */
         .nav.burger__click {
             transform: translateX(0);
         }
 
-        /* показываем фон, когда меню активно */
         .nav.burger__click~.overlay {
             display: block;
         }
-
-                /* .nav__menu.active {
-                    color: var(--primary-color);
-                    border-bottom: 4px solid var(--primary-color) !important;
-                    line-height: 15px;
-                } */
 
                 span.active {
                     color: var(--primary-color) !important;
@@ -579,7 +564,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Мобильный 320px */
 @media screen and (max-width: 330px) {
     .container {
         padding: 35px 10px 0 10px;
@@ -597,10 +581,6 @@ p, h1, h2, h3, h4, h5, h6 {
         padding-left: 13px;
         letter-spacing: 1.7px;
     }
-
-    /* .nav {
-        display: none;
-    } */
 
     .hero__title {
         font-size: 26px;
@@ -794,7 +774,6 @@ margin-left: 175px;
 
 .pets__cards {
     display: flex;
-    /* flex-wrap: wrap; */
     gap: 30px;
     justify-content: center;
 }
@@ -805,8 +784,6 @@ margin-left: 175px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 30px; */
-    /* margin-right: 90px; */
     background-color: var(--color-light-s);
     border-radius: 9px;
     text-decoration: none;
@@ -815,7 +792,6 @@ margin-left: 175px;
 
 .pets__card:last-child {
     margin-right: 0;
-    /* убираем у последней */
 }
 
 .pets__card:hover {
@@ -903,12 +879,10 @@ margin-left: 175px;
 
     .pets__card:nth-child(n+3) {
             display: none;
-            /* оставить только 2 */
         }
 
         .pets__card:nth-child(n+4) {
             display: none;
-            /* оставить только 2 */
         }
 
 }
@@ -932,18 +906,12 @@ margin-left: 175px;
 @media screen and (max-width: 750px) {
     .pets__cards {
         flex-direction: column;
-        /* стрелки под карточками */
         align-items: center;
-        /* gap: 25px; */
     }
 
         .pets__cards .pets__card:nth-child(2) {
             display: none;
         }
-
-    /* .pets__card-2 {
-        display: none;
-    } */
 }
 
 @media screen and (max-width: 400px) {
@@ -984,18 +952,15 @@ margin-left: 175px;
 @media screen and (max-width: 330px) {
     .pets__wrapper {
         flex-direction: column;
-        /* стрелки под карточками */
         gap: 20px;
     }
 
     .pets__card {
         flex: 0 1 100%;
-        /* одна карточка */
     }
 
     .pets__card:nth-child(n+2) {
         display: none;
-        /* оставить только 1 */
     }
 
     .pets__title {
@@ -1353,7 +1318,6 @@ margin-left: 175px;
     .donation__title {
             font-size: 25px;
             text-align: center;
-            /* padding-right: 63px; */
 }
 
 .donation__container {
