@@ -200,41 +200,99 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     max-width: 900px;
     max-height: 500px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    position: relative;
 }
 
 .overlay__content {
     background: #fafafa;
-    position: relative;
     max-width: 900px;
-    height: 500px;
+    height: 362px;
     text-align: center;
+    padding: 50px 20px 88px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 16px;
+}
+
+.overlay__img_wrapper {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
 }
 
 .overlay__img {
-    max-width: 500px;
-    width: 100%;
+    width: 500px;
+    border-radius: 16px;
 }
 
 .overlay__title {
-    font-family: 'Georgia', sans-serif;
-    font-size: 30px;
-    font-weight: normal;
-    line-height: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 130%;
     letter-spacing: 0.06em;
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: var(--primary-color);
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.overlay__subtitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    margin-bottom: 40px;
+    color: var(--color-dark);
+    text-align: left;
 }
 
 .overlay__description {
-    max-width: 400px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    margin-bottom: 40px;
+    color: var(--color-dark);
+    text-align: left;
 }
 
-.overlay__close {
+.overlay__age-title,
+.overlay__inoculations-title,
+.overlay__diseases-title,
+.overlay__parasites-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+    text-align: left;
+}
+
+.overlay__age-title-span,
+.overlay__inoculations-title-span,
+.overlay__diseases-title-span,
+.overlay__parasites-title-span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark);
+}
+
+#overlay__close {
     position: absolute;
-    top: -35px;
-    right: -40px;
+    top: -40px;
+    right: -50px;
     width: 48px;
     height: 48px;
     cursor: pointer;
@@ -242,16 +300,72 @@ p, h1, h2, h3, h4, h5, h6 {
     border: 2px solid var(--primary-color);
     background-color: transparent;
     transition: background-color .3s ease;
-    font-size: 40px;
+    font-size: 26px;
     transform: rotate(90deg);
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
+}
+
+@media screen and (max-width: 1010px) {
+    .overlay__card {
+        width: 630px;
+        height: 350px;
+    }
+
+    .overlay__img_wrapper {
+        width: 350px;
+        height: 350px;
+    }
+
+    .overlay__content {
+        height: 300px;
+        padding: 10px 10px 35px 10px;
+    }
+
+    .overlay__description {
+        font-size: 13px;
+    }
+
+    .overlay__subtitle,
+    .overlay__description {
+        margin-bottom: 20px;
+    }
+
+    .overlay__age-title,
+    .overlay__inoculations-title,
+    .overlay__diseases-title,
+    .overlay__parasites-title {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .overlay__img_wrapper {
+        display: none;
+    }
+
+    .overlay__content {
+        padding-top: 0;
+    }
+
+    .overlay__img {
+        display: none;
+    }
+
+    .overlay__card {
+        width: 240px;
+    }
+
+    #overlay__close {
+        top: -50px;
+        right: -18px;
+    }
 }
 
 .pets__card {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -263,7 +377,6 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
 
-/* когда меню активно */
 .nav.burger__click~.overlay {
     display: block;
 }
@@ -339,7 +452,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Планшет 768px */
 @media screen and (max-width: 768px) {
     .header {
         margin-bottom: 62px;
@@ -395,14 +507,12 @@ p, h1, h2, h3, h4, h5, h6 {
             align-items: center;
             margin-bottom: 0;
             width: 320px;
-            /* height: 100vh; */
             position: fixed;
             top: 0;
             right: 0;
             background-color: var(--color-dark-3xl);
             z-index: 1000;
             transform: translateX(100%);
-            /* меню скрыто за экраном */
             transition: transform .5s ease;
             padding: 248px 38px;
             gap: 40px;
@@ -416,7 +526,6 @@ p, h1, h2, h3, h4, h5, h6 {
             display: flex;
             cursor: pointer;
             z-index: 1001;
-            /* выше меню */
         }
 
         .burger__rotate {
@@ -434,29 +543,27 @@ p, h1, h2, h3, h4, h5, h6 {
             z-index: 999;
         }
 
-        /* активное состояние — меню выезжает */
         .nav.burger__click {
             transform: translateX(0);
         }
 
-        /* показываем фон, когда меню активно */
         .nav.burger__click~.overlay {
             display: block;
         }
-
-                /* .nav__menu.active {
-                    color: var(--primary-color);
-                    border-bottom: 4px solid var(--primary-color) !important;
-                    line-height: 15px;
-                } */
 
                 span.active {
                     color: var(--primary-color) !important;
                 }
 }
 
+@media screen and (max-width: 385px) {
+    .nav {
+        padding: 248px 0;
+    }
+    
+}
 
-/* Мобильный 320px */
+
 @media screen and (max-width: 330px) {
     .container {
         padding: 35px 10px 0 10px;
@@ -474,10 +581,6 @@ p, h1, h2, h3, h4, h5, h6 {
         padding-left: 13px;
         letter-spacing: 1.7px;
     }
-
-    /* .nav {
-        display: none;
-    } */
 
     .hero__title {
         font-size: 26px;
@@ -671,7 +774,6 @@ margin-left: 175px;
 
 .pets__cards {
     display: flex;
-    /* flex-wrap: wrap; */
     gap: 30px;
     justify-content: center;
 }
@@ -682,8 +784,6 @@ margin-left: 175px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 30px; */
-    /* margin-right: 90px; */
     background-color: var(--color-light-s);
     border-radius: 9px;
     text-decoration: none;
@@ -692,7 +792,6 @@ margin-left: 175px;
 
 .pets__card:last-child {
     margin-right: 0;
-    /* убираем у последней */
 }
 
 .pets__card:hover {
@@ -780,12 +879,10 @@ margin-left: 175px;
 
     .pets__card:nth-child(n+3) {
             display: none;
-            /* оставить только 2 */
         }
 
         .pets__card:nth-child(n+4) {
             display: none;
-            /* оставить только 2 */
         }
 
 }
@@ -809,18 +906,12 @@ margin-left: 175px;
 @media screen and (max-width: 750px) {
     .pets__cards {
         flex-direction: column;
-        /* стрелки под карточками */
         align-items: center;
-        /* gap: 25px; */
     }
 
         .pets__cards .pets__card:nth-child(2) {
             display: none;
         }
-
-    /* .pets__card-2 {
-        display: none;
-    } */
 }
 
 @media screen and (max-width: 400px) {
@@ -861,18 +952,15 @@ margin-left: 175px;
 @media screen and (max-width: 330px) {
     .pets__wrapper {
         flex-direction: column;
-        /* стрелки под карточками */
         gap: 20px;
     }
 
     .pets__card {
         flex: 0 1 100%;
-        /* одна карточка */
     }
 
     .pets__card:nth-child(n+2) {
         display: none;
-        /* оставить только 1 */
     }
 
     .pets__title {
@@ -1230,7 +1318,6 @@ margin-left: 175px;
     .donation__title {
             font-size: 25px;
             text-align: center;
-            /* padding-right: 63px; */
 }
 
 .donation__container {
