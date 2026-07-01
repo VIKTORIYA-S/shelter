@@ -185,6 +185,7 @@ function getTotalPages() {
 btnFirst.addEventListener("click", () => {
   currentPage = 1;
   renderPage(currentPage);
+
 });
 btnPrev.addEventListener("click", () => {
   if (currentPage > 1) currentPage--;
