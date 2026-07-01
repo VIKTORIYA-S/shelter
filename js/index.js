@@ -190,11 +190,12 @@ function openOverlay(idOfElement) {
     
   `;
   overlayCard.style.display = "flex";
-
+  document.body.style.overflow = "hidden"; // ← блокируем скролл
   const closeBtn = document.getElementById("overlay__close");
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       overlayCard.style.display = "none";
+      document.body.style.overflow = ""; // ← возвращаем скролл
     });
   }
 }
@@ -203,6 +204,7 @@ function openOverlay(idOfElement) {
 overlayCard.addEventListener("click", (e) => {
   if (e.target === overlayCard) {
     overlayCard.style.display = "none";
+    document.body.style.overflow = ""; // ← возвращаем скролл
   }
 
   overlayClose.addEventListener("click", () => {

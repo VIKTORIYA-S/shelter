@@ -142,7 +142,7 @@ function openOverlayByName(name) {
     return;
   }
 
-    overlayContent.innerHTML = `
+  overlayContent.innerHTML = `
   <div class="overlay__card" id="overlay">
             <div class="overlay__container" id="overlay-content">
                 <div class="overlay__img_wrapper">
@@ -165,9 +165,10 @@ function openOverlayByName(name) {
   `;
 
   overlayCard.style.display = "flex";
-
+  document.body.style.overflow = "hidden"; // ← блокируем скролл
   document.getElementById("overlay__close").addEventListener("click", () => {
     overlayCard.style.display = "none";
+    document.body.style.overflow = ""; // ← возвращаем скролл
   });
 }
 
@@ -175,6 +176,7 @@ function openOverlayByName(name) {
 overlayCard.addEventListener("click", (e) => {
   if (e.target === overlayCard) {
     overlayCard.style.display = "none";
+    document.body.style.overflow = ""; // ← возвращаем скролл
   }
 });
 
